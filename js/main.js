@@ -1,20 +1,18 @@
 fetch("https://fakestoreapi.com/products")
-  .then((res) => res.json())
-  .then((json) => console.log(json));
-
-//   {
-//     let banderas = "";
-//     for (let pais of datos) {
-//       banderas += `<div class="tarjeta"><img src="${image}"><br>
-//               <p>Pais:${pais.name}</p>
-//               <p>Capital:${pais.capital}</p>
-//               <p>Población:${pais.population.toLocaleString()}</p>
-//               <p>Continente:${pais.region}</p>
-//               <p>Idioma:${pais.languages[0].name}</p>
-
-//          </div>`;
-//     }
-//     const elemento = document.querySelector("#banderas");
-//     elemento.innerHTML = banderas;
-
-//   }
+    .then(response => response.json())
+    .then(datos => {
+        let banderas = ''
+        for (let articulo of datos) {
+            banderas += `<div class="tarjeta"><img src="${articulo.image}"><br>
+                    <p>Titulo:${articulo.title}</p>
+                    <p>Categoria:${articulo.category}</p>
+                    <p>Descripcion:${articulo.description}</p>
+                    <p>Precio:${articulo.price}</p>
+                    <p>Ranking:${articulo.rating}</p>
+           
+               </div>`
+        }
+        const elemento = document.querySelector("#banderas")
+        elemento.innerHTML = banderas
+        console.log(datos)}
+    )
