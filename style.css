@@ -33,7 +33,7 @@ a {
 }
 
 .main-home-container {
-  background-image: url(img/backgroundHome.jpg);
+  background-image: url(/img/backgroundHome.jpg);
   min-height: 100vh;
   background-position: center;
   background-size: cover;

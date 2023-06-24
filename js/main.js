@@ -16,12 +16,13 @@ fetch("https://fakestoreapi.com/products")
     contenedor.innerHTML = Cartas;
     console.log(datos);
 
+    const btnMujer = document.getElementById("Mujer");
 
-    const btnMujer = document.getElementById('Mujer')
-    
-    btnMujer.addEventListener('click', () =>{
-      Cartas = ""
-      const filtro = datos.filter(carta => carta.category === `women's clothing`)
+    btnMujer.addEventListener("click", () => {
+      Cartas = "";
+      const filtro = datos.filter(
+        (carta) => carta.category === `women's clothing`
+      );
       for (let articulo of filtro) {
         Cartas += `<div class="tarjeta">
                      <img src="${articulo.image}"><br>
@@ -33,12 +34,14 @@ fetch("https://fakestoreapi.com/products")
                  </div>`;
       }
       contenedor.innerHTML = Cartas;
-    })
+    });
 
-    const btnHombre = document.getElementById('Hombre')
-    btnHombre.addEventListener('click', () =>{
-      Cartas = ""
-      const filtro = datos.filter(carta => carta.category === `men's clothing`)
+    const btnHombre = document.getElementById("Hombre");
+    btnHombre.addEventListener("click", () => {
+      Cartas = "";
+      const filtro = datos.filter(
+        (carta) => carta.category === `men's clothing`
+      );
       for (let articulo of filtro) {
         Cartas += `<div class="tarjeta">
                      <img src="${articulo.image}"><br>
@@ -50,13 +53,12 @@ fetch("https://fakestoreapi.com/products")
                  </div>`;
       }
       contenedor.innerHTML = Cartas;
-    })
-    
+    });
 
-    const btnJoyas = document.getElementById('Joyas')
-    btnJoyas.addEventListener('click', () =>{
-      Cartas = ""
-      const filtro = datos.filter(carta => carta.category === `jewelery`)
+    const btnJoyas = document.getElementById("Joyas");
+    btnJoyas.addEventListener("click", () => {
+      Cartas = "";
+      const filtro = datos.filter((carta) => carta.category === `jewelery`);
       for (let articulo of filtro) {
         Cartas += `<div class="tarjeta">
                      <img src="${articulo.image}"><br>
@@ -68,12 +70,12 @@ fetch("https://fakestoreapi.com/products")
                  </div>`;
       }
       contenedor.innerHTML = Cartas;
-    })
+    });
 
-    const btnElectronica = document.getElementById('Electronica')
-    btnElectronica.addEventListener('click', () =>{
-      Cartas = ""
-      const filtro = datos.filter(carta => carta.category === `electronics`)
+    const btnElectronica = document.getElementById("Electronica");
+    btnElectronica.addEventListener("click", () => {
+      Cartas = "";
+      const filtro = datos.filter((carta) => carta.category === `electronics`);
       for (let articulo of filtro) {
         Cartas += `<div class="tarjeta">
                      <img src="${articulo.image}"><br>
@@ -85,18 +87,19 @@ fetch("https://fakestoreapi.com/products")
                  </div>`;
       }
       contenedor.innerHTML = Cartas;
-    })
+    });
 
-    const btnBuscar = document.getElementById("btnBuscar")
-    const buscador = document.getElementById("buscador")
-    btnBuscar.addEventListener('click', (event) => {
-       event.preventDefault()
-       console.log(buscador.value)
-       if (buscador.value !== "")
-       {
-         const busqueda = datos.filter(carta => carta.title.startsWith(buscador.value))
-         Cartas = ""
-         for (let articulo of busqueda) {
+    const btnBuscar = document.getElementById("btnBuscar");
+    const buscador = document.getElementById("buscador");
+    btnBuscar.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log(buscador.value);
+      if (buscador.value !== "") {
+        const busqueda = datos.filter((carta) =>
+          carta.title.startsWith(buscador.value)
+        );
+        Cartas = "";
+        for (let articulo of busqueda) {
           Cartas += `<div class="tarjeta">
                        <img src="${articulo.image}"><br>
                        <p class="p-categoria">${articulo.category}</p>
@@ -107,8 +110,6 @@ fetch("https://fakestoreapi.com/products")
                    </div>`;
         }
         contenedor.innerHTML = Cartas;
-       }
-    })
+      }
+    });
   });
-
-
