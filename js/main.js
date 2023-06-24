@@ -1,7 +1,7 @@
 fetch("https://fakestoreapi.com/products")
   .then((response) => response.json())
   .then((datos) => {
-    let Cartas = "";
+    let Cartas = [];
     for (let articulo of datos) {
       Cartas += `<div class="tarjeta">
                    <img src="${articulo.image}"><br>
