@@ -3,14 +3,43 @@
   margin: 0;
   font-family: "Public Sans", sans-serif;
 }
-
+/*-------------------------------------- Body ---------------------------------------*/
 body {
   background: linear-gradient(100deg, white, lightgrey);
 }
 
+/*-------------------------------------- Nav ---------------------------------------*/
+
 .navbar {
   box-shadow: 1px 1px 8px grey;
 }
+
+/*-------------------------------------- Nav index.html ---------------------------------------*/
+
+.nav-home {
+  display: flex;
+  width: 100%;
+  padding: 0px 50px;
+  justify-content: space-between;
+}
+
+.btn-shop {
+  display: flex;
+  height: 40px;
+  width: 110px;
+  border-radius: 6px;
+  border: 2px solid #d6d3d3;
+  background: #f8ce3a;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.btn-shop:active {
+  transform: scale(0.94);
+}
+
+/*-------------------------------------- Nav shop.html ---------------------------------------*/
 
 .nav-container {
   display: flex;
@@ -30,22 +59,43 @@ body {
   font-weight: 700;
 }
 
-.nav-container button {
-  width: 100px;
-  border-radius: 6px;
-  color: #f28867;
-  border: 2px solid #fcb299;
-  background: #fff;
+.navbar-nav {
+  --bs-scroll-height: 200px;
 }
 
-.nav-container button:active {
-  transform: scale(0.95);
+.input-buscador {
+  padding: 6px 12px;
+  margin-right: 8px;
+  border: 1px solid grey;
+  border-radius: 6px;
+}
+
+.input-buscador:focus {
+  outline-style: none;
+  border-color: #f8ce3a;
+  box-shadow: 1px 1px 1px #f8ce3a;
+}
+
+.btn-buscar {
+  width: 80px;
+  border-radius: 6px;
+  border: 2px solid #f8ce3a;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-buscar:active {
+  transform: scale(0.94);
+  background: #f8ce3a;
 }
 
 a {
   color: black !important ;
   text-decoration: none !important ;
 }
+
+/*-------------------------------------- Main index.html ---------------------------------------*/
 
 .main-home-container {
   background-image: url(img/backgroundHome.jpg);
@@ -57,7 +107,7 @@ a {
 .titulo-home {
   font-size: 125px;
   padding: 20px 40px;
-  color: #da9f8b;
+  color: #f8ce3a;
 }
 
 .p-home {
@@ -68,6 +118,8 @@ a {
   text-align: justify;
   letter-spacing: 0.04rem;
 }
+
+/*-------------------------------------- Div con articulos en shop.html ---------------------------------------*/
 
 #articulos {
   display: grid;
@@ -104,9 +156,9 @@ a {
 }
 
 .p-titulo {
-  font-weight: 800;
+  font-weight: 900;
   font-size: 1.1rem;
-  color: rgb(224 138 110);
+  color: #ebb206;
 }
 
 .tarjeta p {
@@ -142,6 +194,8 @@ a {
   margin: 0 !important;
 }
 
+/*-------------------------------------- Estilos de un Boton ---------------------------------------*/
+
 #botonArriba {
   position: fixed;
   bottom: 20px;
@@ -149,6 +203,31 @@ a {
   width: 30px;
   transition: all 1s;
 }
+
+/*-------------------------------------- Footer ---------------------------------------*/
+
+.footer-container {
+  background: #494949;
+  display: flex;
+  padding: 20px;
+  gap: 30px;
+}
+
+.footer-tittle {
+  color: #f8ce3a !important;
+  font-size: 1.05rem !important;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.footer-container li {
+  list-style: none;
+  color: #fff;
+  padding: 1px;
+  font-size: 0.8rem;
+}
+
+/*-------------------------------------- @Media queries ---------------------------------------*/
 
 @media (max-width: 1410px) {
   #articulos {
@@ -167,9 +246,6 @@ a {
   .nav-container button {
     display: flex;
     float: right;
-  }
-  .navbar-nav {
-    --bs-scroll-height: 200px;
   }
   .tarjeta {
     width: 300px;
@@ -210,5 +286,8 @@ a {
   }
   .p-home {
     width: 100%;
+  }
+  .footer-container {
+    flex-direction: column;
   }
 }

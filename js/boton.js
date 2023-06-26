@@ -1,3 +1,4 @@
+// Funcion de un boton para volver hacia arriba nuevamente en la página
 function irArriba(pxPantalla) {
   window.addEventListener("scroll", () => {
     var scroll = document.documentElement.scrollTop;

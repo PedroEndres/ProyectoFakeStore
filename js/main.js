@@ -1,3 +1,4 @@
+//  Llamado de la API
 fetch("https://fakestoreapi.com/products")
   .then((response) => response.json())
   .then((datos) => {
@@ -14,6 +15,8 @@ fetch("https://fakestoreapi.com/products")
                </div>`;
     }
     contenedor.innerHTML = Cartas;
+
+    //  Filtros por categorias
 
     const btnAll = document.getElementById("All");
     btnAll.addEventListener("click", () => {
@@ -106,6 +109,8 @@ fetch("https://fakestoreapi.com/products")
       contenedor.innerHTML = Cartas;
     });
 
+    //  Filtro por Búsqueda
+
     const btnBuscar = document.getElementById("btnBuscar");
     const buscador = document.getElementById("buscador");
     btnBuscar.addEventListener("click", (event) => {
@@ -123,6 +128,19 @@ fetch("https://fakestoreapi.com/products")
                        <p class="p-titulo">${articulo.title}</p>
                        <p class="p-descripcion">${articulo.description}</p>
                        <p class="p-precio">Price: ${articulo.price}</p>
+                       <p class="p-rating"><img src="img/star.png" class="star-rating" alt="Estrella de rating">${articulo.rating.rate}</p>
+                   </div>`;
+        }
+        contenedor.innerHTML = Cartas;
+      } else {
+        let Cartas = [];
+        for (let articulo of datos) {
+          Cartas += `<div class="tarjeta">
+                       <img src="${articulo.image}"><br>
+                       <p class="p-categoria">${articulo.category}</p>
+                       <p class="p-titulo">${articulo.title}</p>
+                       <p class="p-descripcion">${articulo.description}</p>
+                       <p class="p-precio">Price: $${articulo.price}</p>
                        <p class="p-rating"><img src="img/star.png" class="star-rating" alt="Estrella de rating">${articulo.rating.rate}</p>
                    </div>`;
         }
