@@ -39,8 +39,6 @@ body {
 }
 
 .nav-container button:active {
-  background: #f28867;
-  color: #fff;
   transform: scale(0.95);
 }
 
