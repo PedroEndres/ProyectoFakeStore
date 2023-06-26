@@ -60,7 +60,7 @@ body {
 }
 
 .navbar-nav {
-  --bs-scroll-height: 200px;
+  --bs-scroll-height: 400px !important;
 }
 
 .input-buscador {
