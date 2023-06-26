@@ -8,6 +8,10 @@ body {
   background: linear-gradient(100deg, white, lightgrey);
 }
 
+.navbar {
+  box-shadow: 1px 1px 8px grey;
+}
+
 .nav-container {
   display: flex;
   width: 100%;
@@ -23,8 +27,21 @@ body {
 }
 
 .nav-container ul li:hover {
-  transform: scale(1.05);
   font-weight: 700;
+}
+
+.nav-container button {
+  width: 100px;
+  border-radius: 6px;
+  color: #f28867;
+  border: 2px solid #fcb299;
+  background: #fff;
+}
+
+.nav-container button:active {
+  background: #f28867;
+  color: #fff;
+  transform: scale(0.95);
 }
 
 a {
@@ -57,16 +74,15 @@ a {
 #articulos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  width: 100%;
+  gap: 40px;
+  width: 80%;
   margin: auto;
   padding: 35px 0;
 }
 
 .tarjeta {
-  width: 450px;
-  height: 720px;
+  width: 350px;
+  height: 650px;
   border: 1px solid #919191;
   box-shadow: 0px 1px 4px grey;
   border-radius: 10px;
@@ -85,8 +101,8 @@ a {
   display: flex;
   margin: auto;
   border-radius: 10px;
-  height: 300px;
-  width: 250px;
+  height: 250px;
+  width: 200px;
 }
 
 .p-titulo {
@@ -103,6 +119,7 @@ a {
 
 .p-categoria {
   color: grey;
+  margin-bottom: 4px;
 }
 
 .p-descripcion {
@@ -116,10 +133,84 @@ a {
   font-weight: 800;
 }
 
+.p-rating {
+  display: flex;
+  gap: 6px;
+}
+
+.star-rating {
+  height: 22px !important;
+  width: 22px !important;
+  margin: 0 !important;
+}
+
 #botonArriba {
   position: fixed;
   bottom: 20px;
   right: -100px;
   width: 30px;
   transition: all 1s;
+}
+
+@media (max-width: 1410px) {
+  #articulos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tarjeta img {
+    height: 200px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 991px) {
+  .nav-container {
+    display: block;
+  }
+  .nav-container button {
+    display: flex;
+    float: right;
+  }
+  .navbar-nav {
+    --bs-scroll-height: 200px;
+  }
+  .tarjeta {
+    width: 300px;
+    height: 550px;
+  }
+  .tarjeta img {
+    height: 150px;
+    width: 100px;
+  }
+  .tarjeta p {
+    font-size: 0.9rem;
+  }
+  .titulo-home {
+    font-size: 95px;
+  }
+}
+
+@media (max-width: 767px) {
+  #articulos {
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  }
+  .tarjeta {
+    width: 265px;
+    height: 500px;
+  }
+  .p-titulo {
+    margin-bottom: 5px;
+  }
+  .p-descripcion {
+    font-size: 0.8rem;
+  }
+  .p-precio {
+    margin-bottom: 5px;
+  }
+  .titulo-home {
+    font-size: 55px;
+  }
+  .p-home {
+    width: 100%;
+  }
 }

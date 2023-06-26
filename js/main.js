@@ -1,6 +1,7 @@
 fetch("https://fakestoreapi.com/products")
   .then((response) => response.json())
   .then((datos) => {
+    const contenedor = document.querySelector("#articulos");
     let Cartas = [];
     for (let articulo of datos) {
       Cartas += `<div class="tarjeta">
@@ -8,12 +9,28 @@ fetch("https://fakestoreapi.com/products")
                    <p class="p-categoria">${articulo.category}</p>
                    <p class="p-titulo">${articulo.title}</p>
                    <p class="p-descripcion">${articulo.description}</p>
-                   <p class="p-precio">Price: ${articulo.price}</p>
-                   <p>${articulo.rating}</p>
+                   <p class="p-precio">Price: $${articulo.price}</p>
+                   <p class="p-rating"><img src="img/star.png" class="star-rating" alt="Estrella de rating">${articulo.rating.rate}</p>
                </div>`;
     }
-    const contenedor = document.querySelector("#articulos");
     contenedor.innerHTML = Cartas;
+
+    const btnAll = document.getElementById("All");
+    btnAll.addEventListener("click", () => {
+      let Cartas = [];
+      for (let articulo of datos) {
+        Cartas += `<div class="tarjeta">
+                     <img src="${articulo.image}"><br>
+                     <p class="p-categoria">${articulo.category}</p>
+                     <p class="p-titulo">${articulo.title}</p>
+                     <p class="p-descripcion">${articulo.description}</p>
+                     <p class="p-precio">Price: $${articulo.price}</p>
+                     <p class="p-rating"><img src="img/star.png" class="star-rating" alt="Estrella de rating">${articulo.rating.rate}</p>
+                 </div>`;
+      }
+      contenedor.innerHTML = Cartas;
+    });
+
     console.log(datos);
 
     const btnMujer = document.getElementById("Mujer");
@@ -30,7 +47,7 @@ fetch("https://fakestoreapi.com/products")
                      <p class="p-titulo">${articulo.title}</p>
                      <p class="p-descripcion">${articulo.description}</p>
                      <p class="p-precio">Price: ${articulo.price}</p>
-                     <p>${articulo.rating}</p>
+                     <p class="p-rating"><img src="img/star.png" class="star-rating" alt="Estrella de rating">${articulo.rating.rate}</p>
                  </div>`;
       }
       contenedor.innerHTML = Cartas;
@@ -49,7 +66,7 @@ fetch("https://fakestoreapi.com/products")
                      <p class="p-titulo">${articulo.title}</p>
                      <p class="p-descripcion">${articulo.description}</p>
                      <p class="p-precio">Price: ${articulo.price}</p>
-                     <p>${articulo.rating}</p>
+                     <p class="p-rating"><img src="img/star.png" class="star-rating" alt="Estrella de rating">${articulo.rating.rate}</p>
                  </div>`;
       }
       contenedor.innerHTML = Cartas;
@@ -66,7 +83,7 @@ fetch("https://fakestoreapi.com/products")
                      <p class="p-titulo">${articulo.title}</p>
                      <p class="p-descripcion">${articulo.description}</p>
                      <p class="p-precio">Price: ${articulo.price}</p>
-                     <p>${articulo.rating}</p>
+                     <p class="p-rating"><img src="img/star.png" class="star-rating" alt="Estrella de rating">${articulo.rating.rate}</p>
                  </div>`;
       }
       contenedor.innerHTML = Cartas;
@@ -83,7 +100,7 @@ fetch("https://fakestoreapi.com/products")
                      <p class="p-titulo">${articulo.title}</p>
                      <p class="p-descripcion">${articulo.description}</p>
                      <p class="p-precio">Price: ${articulo.price}</p>
-                     <p>${articulo.rating}</p>
+                     <p class="p-rating"><img src="img/star.png" class="star-rating" alt="Estrella de rating">${articulo.rating.rate}</p>
                  </div>`;
       }
       contenedor.innerHTML = Cartas;
@@ -106,7 +123,7 @@ fetch("https://fakestoreapi.com/products")
                        <p class="p-titulo">${articulo.title}</p>
                        <p class="p-descripcion">${articulo.description}</p>
                        <p class="p-precio">Price: ${articulo.price}</p>
-                       <p>${articulo.rating}</p>
+                       <p class="p-rating"><img src="img/star.png" class="star-rating" alt="Estrella de rating">${articulo.rating.rate}</p>
                    </div>`;
         }
         contenedor.innerHTML = Cartas;
